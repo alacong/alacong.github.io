@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>梦</title>
+  
+  <subtitle>念</subtitle>
+  <link href="https://www.congxww.top/atom.xml" rel="self"/>
+  
+  <link href="https://www.congxww.top/"/>
+  <updated>2021-09-29T03:26:36.772Z</updated>
+  <id>https://www.congxww.top/</id>
+  
+  <author>
+    <name>念</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python中socket套接字send与sendall的区别</title>
+    <link href="https://www.congxww.top/posts/377229865.html"/>
+    <id>https://www.congxww.top/posts/377229865.html</id>
+    <published>2021-09-29T03:17:58.000Z</published>
+    <updated>2021-09-29T03:26:36.772Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://www.congxww.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python-socket-server</title>
+    <link href="https://www.congxww.top/posts/2503312173.html"/>
+    <id>https://www.congxww.top/posts/2503312173.html</id>
+    <published>2021-09-29T02:18:07.000Z</published>
+    <updated>2021-09-29T02:25:26.180Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://www.congxww.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JMeter RabbitMQ采样器AMQP详解与实战</title>
+    <link href="https://www.congxww.top/posts/1885269627.html"/>
+    <id>https://www.congxww.top/posts/1885269627.html</id>
+    <published>2021-09-26T07:53:02.000Z</published>
+    <updated>2021-09-26T07:54:05.566Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="jmeter" scheme="https://www.congxww.top/tags/jmeter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo deploy操作时出现token、username、password输入</title>
+    <link href="https://www.congxww.top/posts/1655302351.html"/>
+    <id>https://www.congxww.top/posts/1655302351.html</id>
+    <published>2021-09-24T08:27:25.000Z</published>
+    <updated>2021-09-24T08:55:28.001Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="https://www.congxww.top/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>集成测试方法示例</title>
+    <link href="https://www.congxww.top/posts/39571709.html"/>
+    <id>https://www.congxww.top/posts/39571709.html</id>
+    <published>2021-09-13T07:23:50.000Z</published>
+    <updated>2021-09-24T06:17:02.283Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="测试基础" scheme="https://www.congxww.top/tags/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>集成测试与功能测试</title>
+    <link href="https://www.congxww.top/posts/92960785.html"/>
+    <id>https://www.congxww.top/posts/92960785.html</id>
+    <published>2021-09-13T07:22:49.000Z</published>
+    <updated>2021-09-13T07:24:39.027Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="测试基础" scheme="https://www.congxww.top/tags/%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(len = is.read(buffer)) != -1</title>
+    <link href="https://www.congxww.top/posts/2814047462.html"/>
+    <id>https://www.congxww.top/posts/2814047462.html</id>
+    <published>2021-09-13T07:21:27.000Z</published>
+    <updated>2021-09-13T07:24:39.024Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Javaweb" scheme="https://www.congxww.top/tags/Javaweb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于&#39;$&#39;{pageContext.request.contextPath}的理解</title>
+    <link href="https://www.congxww.top/posts/966109248.html"/>
+    <id>https://www.congxww.top/posts/966109248.html</id>
+    <published>2021-09-13T07:20:19.000Z</published>
+    <updated>2021-09-13T07:24:39.026Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Javaweb" scheme="https://www.congxww.top/tags/Javaweb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础--方法重写与重载</title>
+    <link href="https://www.congxww.top/posts/1198416085.html"/>
+    <id>https://www.congxww.top/posts/1198416085.html</id>
+    <published>2021-09-13T07:18:27.000Z</published>
+    <updated>2021-09-13T07:25:08.453Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java基础" scheme="https://www.congxww.top/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础--封装、继承</title>
+    <link href="https://www.congxww.top/posts/947896497.html"/>
+    <id>https://www.congxww.top/posts/947896497.html</id>
+    <published>2021-09-13T07:17:09.000Z</published>
+    <updated>2021-09-13T07:25:08.455Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java基础" scheme="https://www.congxww.top/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础--接口、内部类</title>
+    <link href="https://www.congxww.top/posts/2050224293.html"/>
+    <id>https://www.congxww.top/posts/2050224293.html</id>
+    <published>2021-09-13T07:06:35.000Z</published>
+    <updated>2021-09-13T07:09:00.538Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java基础" scheme="https://www.congxww.top/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>后端——servlet的setAttribute()、getAttribute</title>
+    <link href="https://www.congxww.top/posts/979668619.html"/>
+    <id>https://www.congxww.top/posts/979668619.html</id>
+    <published>2021-09-13T07:06:35.000Z</published>
+    <updated>2021-09-13T07:09:24.576Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java web" scheme="https://www.congxww.top/tags/Java-web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础--异常</title>
+    <link href="https://www.congxww.top/posts/2502667308.html"/>
+    <id>https://www.congxww.top/posts/2502667308.html</id>
+    <published>2021-09-12T17:13:29.000Z</published>
+    <updated>2021-09-24T06:15:58.766Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java基础" scheme="https://www.congxww.top/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础语法--方法基础</title>
+    <link href="https://www.congxww.top/posts/2417257089.html"/>
+    <id>https://www.congxww.top/posts/2417257089.html</id>
+    <published>2021-09-12T17:02:46.000Z</published>
+    <updated>2021-09-24T06:17:56.754Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java基础" scheme="https://www.congxww.top/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础--对象定义</title>
+    <link href="https://www.congxww.top/posts/2499841525.html"/>
+    <id>https://www.congxww.top/posts/2499841525.html</id>
+    <published>2021-09-12T16:44:38.000Z</published>
+    <updated>2021-09-13T07:00:47.270Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java基础" scheme="https://www.congxww.top/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对象定义</title>
+    <link href="https://www.congxww.top/posts/2499841526.html"/>
+    <id>https://www.congxww.top/posts/2499841526.html</id>
+    <published>2021-09-12T16:44:38.000Z</published>
+    <updated>2021-09-13T07:25:08.455Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="java" scheme="https://www.congxww.top/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://www.congxww.top/posts/hello%20world.html"/>
+    <id>https://www.congxww.top/posts/hello%20world.html</id>
+    <published>2021-09-12T05:12:03.000Z</published>
+    <updated>2021-09-13T02:20:40.855Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="https://www.congxww.top/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="其他" scheme="https://www.congxww.top/tags/%E5%85%B6%E4%BB%96/"/>
+    
+  </entry>
+  
+</feed>
