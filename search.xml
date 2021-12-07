@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>python相关学习文档收集</title>
+      <link href="/posts/3937376234.html"/>
+      <url>/posts/3937376234.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>bs4中文文档：</p><p>用于网页爬虫</p><p><a href="https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/">https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/</a></p><p><a href="https://segmentfault.com/a/1190000007180257">GitLab-CI 从安装到差点放弃</a></p><p><a href="https://segmentfault.com/a/1190000007180257">https://segmentfault.com/a/1190000007180257</a></p><p>unittest相关资料，可以用谷歌翻译</p><p><a href="https://docs.python.org/3.6/library/unittest.html#">https://docs.python.org/3.6/library/unittest.html#</a></p><p>Python教程 - 廖雪峰的官方网站</p><p><a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000">https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000</a></p><p>在windows系统模拟linux使用命令</p><p><a href="https://cygwin.com/install.html">https://cygwin.com/install.html</a></p><p>rpc接口grpc框架，相关资料</p><p><a href="https://grpc.io/docs/guides/auth.html">https://grpc.io/docs/guides/auth.html</a></p><p>rpc代码实例，github开源</p><p><a href="https://github.com/grpc/grpc/blob/v1.14.1/examples/python/route_guide/route_guide_client.py">https://github.com/grpc/grpc/blob/v1.14.1/examples/python/route_guide/route_guide_client.py</a></p><p>python spyne包，支持rpc ，webservice等接口</p><p><a href="http://spyne.io/#inprot=Soap11&amp;outprot=HtmlMicroFormat&amp;s=rpc&amp;tpt=ZeroMQServer&amp;validator=true">http://spyne.io/#inprot=Soap11&amp;outprot=HtmlMicroFormat&amp;s=rpc&amp;tpt=ZeroMQServer&amp;validator=true</a></p><p>websocket代码，官方示例。包含长短连接</p><p><a href="https://pypi.org/project/websocket-client/">https://pypi.org/project/websocket-client/</a></p><p>遇到一些错误，此网站，基本可以查到解决方法。 值得收集</p><p><a href="https://stackoverflow.com/questions/42629047/how-to-increase-message-size-in-grpc-using-python">https://stackoverflow.com/questions/42629047/how-to-increase-message-size-in-grpc-using-python</a></p><p>来自搜狐，自动化ui测试一些思考</p><p><a href="http://www.sohu.com/a/220161426_741445">http://www.sohu.com/a/220161426_741445</a></p><p>美团点评，技术文章</p><p><a href="https://tech.meituan.com/">https://tech.meituan.com/</a></p><p>适合unittest框架的，可视化测试报告html</p><p><a href="https://github.com/TesterlifeRaymond/BeautifulReport">https://github.com/TesterlifeRaymond/BeautifulReport</a></p><p>pytest进阶</p><p><a href="https://docs.pytest.org/en/latest/contents.html">https://docs.pytest.org/en/latest/contents.html</a></p><p><a href="https://www.jianshu.com/p/54b0f4016300">https://www.jianshu.com/p/54b0f4016300</a></p><p>纯python开发的locust性能测试工具</p><p><a href="https://docs.locust.io/en/latest/what-is-locust.html#">https://docs.locust.io/en/latest/what-is-locust.html#</a></p><p><a href="https://docs.locust.io/en/latest/quickstart.html">https://docs.locust.io/en/latest/quickstart.html</a></p><p>阿里完整自动化测试解决方案macaca</p><p><a href="https://yq.aliyun.com/articles/8310">https://yq.aliyun.com/articles/8310</a></p><p>tapd腾讯，敏捷开发平台scrum</p><p><a href="https://www.tapd.cn/">https://www.tapd.cn/</a></p><p>docker菜鸟教程</p><p><a href="http://www.runoob.com/docker/docker-tutorial.html">http://www.runoob.com/docker/docker-tutorial.html</a></p><p>docker中文社区</p><p><a href="http://www.docker.org.cn/">http://www.docker.org.cn/</a></p><p>站长工具，包含：转码，http,websock,json,xml解析等等，非常适用，推荐</p><p><a href="http://tool.chinaz.com/map.aspx">http://tool.chinaz.com/map.aspx</a></p><p>接口在线压力测试工具http</p><p><a href="http://coolaf.com/tool/testing">http://coolaf.com/tool/testing</a></p><p>白帽子，安全论坛</p><p><a href="http://www.baimaozi.cn/">http://www.baimaozi.cn/</a></p><p>jenkins教程，廖雪峰教程</p><p><a href="https://www.liaoxuefeng.com/article/001463233913442cdb2d1bd1b1b42e3b0b29eb1ba736c5e000">https://www.liaoxuefeng.com/article/001463233913442cdb2d1bd1b1b42e3b0b29eb1ba736c5e000</a></p><p>jmeter内建函数教程－官网</p><p><a href="https://jmeter.apache.org/usermanual/functions.html#__javaScript">https://jmeter.apache.org/usermanual/functions.html#__javaScript</a></p><p>python mock教程－官网</p><p><a href="http://www.voidspace.org.uk/python/mock/mock.html">http://www.voidspace.org.uk/python/mock/mock.html</a></p><p>selenium火狐驱动－github</p><p><a href="https://github.com/mozilla/geckodriver/releases/">https://github.com/mozilla/geckodriver/releases/</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> python、测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python中socket套接字send与sendall的区别</title>
       <link href="/posts/377229865.html"/>
       <url>/posts/377229865.html</url>
