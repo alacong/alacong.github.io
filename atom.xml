@@ -6,7 +6,7 @@
   <link href="https://www.congxww.top/atom.xml" rel="self"/>
   
   <link href="https://www.congxww.top/"/>
-  <updated>2021-11-08T03:15:25.636Z</updated>
+  <updated>2021-12-07T10:03:46.696Z</updated>
   <id>https://www.congxww.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>python相关学习文档收集</title>
-    <link href="https://www.congxww.top/posts/3937376234.html"/>
-    <id>https://www.congxww.top/posts/3937376234.html</id>
-    <published>2021-11-08T03:13:47.000Z</published>
-    <updated>2021-11-08T03:15:25.636Z</updated>
+    <title>Python-json.dumps()和dump()、json.loads()和load()的区别</title>
+    <link href="https://www.congxww.top/posts/1591307376.html"/>
+    <id>https://www.congxww.top/posts/1591307376.html</id>
+    <published>2021-12-07T09:57:08.000Z</published>
+    <updated>2021-12-07T10:03:46.696Z</updated>
     
     
       
@@ -35,7 +35,122 @@
     
     
     
-    <category term="python、测试" scheme="https://www.congxww.top/tags/python%E3%80%81%E6%B5%8B%E8%AF%95/"/>
+    <category term="python" scheme="https://www.congxww.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python字符串与列表之间的转换</title>
+    <link href="https://www.congxww.top/posts/2292522681.html"/>
+    <id>https://www.congxww.top/posts/2292522681.html</id>
+    <published>2021-12-07T09:38:08.000Z</published>
+    <updated>2021-12-07T10:03:46.706Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://www.congxww.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python元组与列表转换</title>
+    <link href="https://www.congxww.top/posts/2214629546.html"/>
+    <id>https://www.congxww.top/posts/2214629546.html</id>
+    <published>2021-12-07T09:21:50.000Z</published>
+    <updated>2021-12-07T10:03:46.705Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://www.congxww.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo常用命令</title>
+    <link href="https://www.congxww.top/posts/871731478.html"/>
+    <id>https://www.congxww.top/posts/871731478.html</id>
+    <published>2021-12-07T08:58:38.000Z</published>
+    <updated>2021-12-07T10:03:46.701Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="https://www.congxww.top/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>list、tuple、dict、set</title>
+    <link href="https://www.congxww.top/posts/823791369.html"/>
+    <id>https://www.congxww.top/posts/823791369.html</id>
+    <published>2021-11-09T02:38:37.000Z</published>
+    <updated>2021-12-07T10:03:46.707Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python基础" scheme="https://www.congxww.top/tags/python%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python相关学习文档收集</title>
+    <link href="https://www.congxww.top/posts/3937376235.html"/>
+    <id>https://www.congxww.top/posts/3937376235.html</id>
+    <published>2021-11-08T03:13:47.000Z</published>
+    <updated>2021-11-08T03:20:40.479Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://www.congxww.top/tags/python/"/>
     
   </entry>
   
@@ -358,77 +473,6 @@
     
     
     <category term="Java基础" scheme="https://www.congxww.top/tags/Java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java基础--对象定义</title>
-    <link href="https://www.congxww.top/posts/2499841525.html"/>
-    <id>https://www.congxww.top/posts/2499841525.html</id>
-    <published>2021-09-12T16:44:38.000Z</published>
-    <updated>2021-09-13T07:00:47.270Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Java基础" scheme="https://www.congxww.top/tags/Java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>对象定义</title>
-    <link href="https://www.congxww.top/posts/2499841526.html"/>
-    <id>https://www.congxww.top/posts/2499841526.html</id>
-    <published>2021-09-12T16:44:38.000Z</published>
-    <updated>2021-09-13T07:25:08.455Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="java" scheme="https://www.congxww.top/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://www.congxww.top/posts/hello%20world.html"/>
-    <id>https://www.congxww.top/posts/hello%20world.html</id>
-    <published>2021-09-12T05:12:03.000Z</published>
-    <updated>2021-09-13T02:20:40.855Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="随笔" scheme="https://www.congxww.top/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-    <category term="其他" scheme="https://www.congxww.top/tags/%E5%85%B6%E4%BB%96/"/>
     
   </entry>
   
