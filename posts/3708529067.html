@@ -1,0 +1,597 @@
+<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="utf-8"><meta name="keywords" content="mysql笔记整理, Java Python 编程语言 念 框架师 计算机应用 视频资料 免费"><meta name="description" content="武汉轻工大学大学 | 计算机科学与技术 | 计算机网络技术"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="renderer" content="webkit|ie-stand|ie-comp"><meta name="mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>mysql笔记整理 | 思</title><link rel="icon" type="image/png" href="https://imgtu.com/i/TGlpE6"><link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css"><link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css"><link rel="stylesheet" type="text/css" href="/libs/aos/aos.css"><link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css"><link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css"><link rel="stylesheet" type="text/css" href="/css/matery.css"><link rel="stylesheet" type="text/css" href="/css/my.css"><script src="/libs/jquery/jquery.min.js"></script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="思" type="application/atom+xml"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><style>body{background-image:url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);background-repeat:no-repeat;background-size:cover;background-attachment:fixed}</style><body><header class="navbar-fixed"><nav id="headNav" class="bg-color nav-transparent"><div id="navContainer" class="nav-wrapper container"><div class="brand-logo"><a href="/" class="waves-effect waves-light"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="/medias/logo.png" class="logo-img" alt="LOGO"> <span class="logo-span">思</span></a></div><a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a><ul class="right nav-menu"><li class="hide-on-med-and-down nav-item"><a href="/" class="waves-effect waves-light"><i class="fas fa-home" style="zoom:.6"></i> <span>首页</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fas fa-tags" style="zoom:.6"></i> <span>标签</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fas fa-bookmark" style="zoom:.6"></i> <span>分类</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fas fa-archive" style="zoom:.6"></i> <span>归档</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/movies" class="waves-effect waves-light"><i class="fas fa-film" style="zoom:.6"></i> <span>电影</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/about" class="waves-effect waves-light"><i class="fas fa-user-circle" style="zoom:.6"></i> <span>关于</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/contact" class="waves-effect waves-light"><i class="fas fa-comments" style="zoom:.6"></i> <span>留言板</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fas fa-address-book" style="zoom:.6"></i> <span>友情链接</span></a></li><li class="hide-on-med-and-down nav-item"><a href="/navigate" class="waves-effect waves-light"><i class="fas fa-location-arrow" style="zoom:.6"></i> <span>Navigate</span></a></li><li><a href="#searchModal" class="modal-trigger waves-effect waves-light"><i id="searchIcon" class="fas fa-search" title="搜索" style="zoom:.85"></i></a></li></ul><div id="mobile-nav" class="side-nav sidenav"><div class="mobile-head bg-color"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="/medias/logo.png" class="logo-img circle responsive-img"><div class="logo-name">思</div><div class="logo-desc">武汉轻工大学大学 | 计算机科学与技术 | 计算机网络技术</div></div><ul class="menu-list mobile-menu-list"><li class="m-nav-item"><a href="/" class="waves-effect waves-light"><i class="fa-fw fas fa-home"></i> 首页</a></li><li class="m-nav-item"><a href="/tags" class="waves-effect waves-light"><i class="fa-fw fas fa-tags"></i> 标签</a></li><li class="m-nav-item"><a href="/categories" class="waves-effect waves-light"><i class="fa-fw fas fa-bookmark"></i> 分类</a></li><li class="m-nav-item"><a href="/archives" class="waves-effect waves-light"><i class="fa-fw fas fa-archive"></i> 归档</a></li><li class="m-nav-item"><a href="/movies" class="waves-effect waves-light"><i class="fa-fw fas fa-film"></i> 电影</a></li><li class="m-nav-item"><a href="/about" class="waves-effect waves-light"><i class="fa-fw fas fa-user-circle"></i> 关于</a></li><li class="m-nav-item"><a href="/contact" class="waves-effect waves-light"><i class="fa-fw fas fa-comments"></i> 留言板</a></li><li class="m-nav-item"><a href="/friends" class="waves-effect waves-light"><i class="fa-fw fas fa-address-book"></i> 友链</a></li><li class="m-nav-item"><a href="/navigate" class="waves-effect waves-light"><i class="fa-fw fas fa-location-arrow"></i> 导航</a></li></ul></div></div></nav></header><script src="/libs/cryptojs/crypto-js.min.js"></script><script>(function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();</script><div class="bg-cover pd-header post-cover" style="background-image:url(/medias/featureimages/17.jpg)"><div class="container" style="right:0;left:0"><div class="row"><div class="col s12 m12 l12"><div class="brand"><h1 class="description center-align post-title">mysql笔记整理</h1></div></div></div></div></div><main class="post-container content"><link rel="stylesheet" href="/libs/tocbot/tocbot.css"><style>#articleContent h1::before,#articleContent h2::before,#articleContent h3::before,#articleContent h4::before,#articleContent h5::before,#articleContent h6::before{display:block;content:" ";height:100px;margin-top:-100px;visibility:hidden}#articleContent :focus{outline:0}.toc-fixed{position:fixed;top:64px}.toc-widget{width:345px;padding-left:20px}.toc-widget .toc-title{padding:35px 0 15px 17px;font-size:1.5rem;font-weight:700;line-height:1.5rem}.toc-widget ol{padding:0;list-style:none}#toc-content{padding-bottom:30px;overflow:auto}#toc-content ol{padding-left:10px}#toc-content ol li{padding-left:10px}#toc-content .toc-link:hover{color:#42b983;font-weight:700;text-decoration:underline}#toc-content .toc-link::before{background-color:transparent;max-height:25px;position:absolute;right:23.5vw;display:block}#toc-content .is-active-link{color:#42b983}#floating-toc-btn{position:fixed;right:15px;bottom:76px;padding-top:15px;margin-bottom:0;z-index:998}#floating-toc-btn .btn-floating{width:48px;height:48px}#floating-toc-btn .btn-floating i{line-height:48px;font-size:1.4rem}</style><div class="row"><div id="main-content" class="col s12 m12 l9"><div id="artDetail"><div class="card"><div class="card-content article-info"><div class="row tag-cate"><div class="col s7"><div class="article-tag"><a href="/tags/MySQL/"><span class="chip bg-color">MySQL</span></a></div></div><div class="col s5 right-align"></div></div><div class="post-info"><div class="post-date info-break-policy"><i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp; 2021-12-08</div><div class="post-date info-break-policy"><i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp; 2021-12-09</div><div class="info-break-policy"><i class="fa fa-pencil"></i> 作者: 念</div><div class="info-break-policy"><i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp; 5.3k</div><div class="info-break-policy"><i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp; 21 分</div><span id="busuanzi_container_site_pv" style="display:none"></span> <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp; <span id="busuanzi_value_page_pv"></span></div></div><hr class="clearfix"><div class="card-content article-card-content"><div id="articleContent"><h4 id="一、MySQL笔记整理"><a href="#一、MySQL笔记整理" class="headerlink" title="一、MySQL笔记整理"></a>一、MySQL笔记整理</h4><h5 id="1、-数据类型"><a href="#1、-数据类型" class="headerlink" title="1、 数据类型"></a>1、 数据类型</h5><pre class="line-numbers language-mysql"><code class="language-mysql">tinyint--1--byte
+samllint--2-short
+int--4-int
+bingint--8--long
+folat--4--float
+double--8--double
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="2、字符串类型"><a href="#2、字符串类型" class="headerlink" title="2、字符串类型"></a>2、字符串类型</h5><pre class="line-numbers language-mysql"><code class="language-mysql">char(n)--长度不超255字符--剩余空间空格填充--存储速度最快，浪费空间，存等长
+varchar(n)--最长不超65535字节--剩余留给别的数据使用，不浪费空间
+text--超过255时使用--大文本类型，
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h5 id="3、-日期类型"><a href="#3、-日期类型" class="headerlink" title="3、 日期类型"></a>3、 日期类型</h5><pre class="line-numbers language-mysql"><code class="language-mysql">date--年月日
+time--时分秒
+datetime--年月日时分秒--1000-9999
+timestamp--时间戳，某刻毫秒值--最大2038--自动更新
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h5 id="4、-字段（列）约束"><a href="#4、-字段（列）约束" class="headerlink" title="4、 字段（列）约束"></a>4、 字段（列）约束</h5><pre class="line-numbers language-mysql"><code class="language-mysql">主键约束--primary key 主键auto increament自增
+非空约束--not null 不能能有空值
+唯一约束--unique-不重复，可有null值
+外键约束--表与表之间关系的列
+自增
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="5、添加主键约束"><a href="#5、添加主键约束" class="headerlink" title="5、添加主键约束"></a>5、添加主键约束</h5><pre class="line-numbers language-mysql"><code class="language-mysql">* 语句 ALTER TABLE 表名 ADD【CONSTRAINT[给主键起名-可省略]】PRIMARY KEY（id)
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="6、添加唯一约束"><a href="#6、添加唯一约束" class="headerlink" title="6、添加唯一约束"></a>6、添加唯一约束</h5><pre class="line-numbers language-mysql"><code class="language-mysql">* 语句：ALTER TABLE 表名 ADD[CONSTRAINT[起名可省略] UNIQUE(列名）-可以一次条件多个
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="7、添加外建"><a href="#7、添加外建" class="headerlink" title="7、添加外建"></a>7、添加外建</h5><pre class="line-numbers language-mysql"><code class="language-mysql">* 语句：ALTER TABLE 表名 ADD[CONSTRAINT[起名可省略]] FOREIGN KEY (当前表列名） REFERENCES   父表名（id--参照列)
+
+添加/删除默认约束
+ALTER TABLE 表名 ALTER 列名 SET DEFAULT 默认值（例如15）
+
+* ALTER TABLE 表名 ALTER 列名 DROP DEFAULT--删除默认值
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="8、删除主键约束"><a href="#8、删除主键约束" class="headerlink" title="8、删除主键约束"></a>8、删除主键约束</h5><pre class="line-numbers language-mysql"><code class="language-mysql">ALTER TABLE 表名 DROP PRIMARY KEY
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="9、删除唯一约束"><a href="#9、删除唯一约束" class="headerlink" title="9、删除唯一约束"></a>9、删除唯一约束</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SHOW INDEXES FROM 表名--查看表有哪些约束
+ALOW TABLE 表名 DROP INDEX （key-名字那个)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h5 id="10、删除外键"><a href="#10、删除外键" class="headerlink" title="10、删除外键"></a>10、删除外键</h5><pre class="line-numbers language-mysql"><code class="language-mysql">ALTER TABLE 表名 DROP FOREIGN KEY 外键名字
+SHOW CREATE TABLE 表名--查看外键名字
+ALTER TABLE 表名 DROP INDEX 索引名--删除索引
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h5 id="11、MYSQL操作类别"><a href="#11、MYSQL操作类别" class="headerlink" title="11、MYSQL操作类别"></a>11、MYSQL操作类别</h5><pre class="line-numbers language-mysql"><code class="language-mysql">写操作：INSERT,UPDATE DELETE(增删改）
+读取操作：SELECT--查
+tinyint(1)--布尔判断--1为true 0为Flase
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h5 id="12、MySQL–操作"><a href="#12、MySQL–操作" class="headerlink" title="12、MySQL–操作"></a>12、MySQL–操作</h5><pre class="line-numbers language-mysql"><code class="language-mysql">shouw databases;--查看服务器所有库
+use +库---进入指定库
+select database();--查看已经进入的库
+show rables;--查看库所有元素
+drop database if exists +库；--删除指定已有的库
+create databse 库名 charset utf8;--创建库
+drop table if exists 表名--删除表
+create tabale 表名（列名+数据类型，多个用逗号隔开）
+desc 表名；---查看表结构
+#空格 --空格---注释
+insert into 表名（列1，列2）values(值1，值2）；
+insert into 表名 values(值1，值2)--只能所有列加入值
+update 表名 set 列名=列名+值 where  列名2=值2--给列名2所有值都加值
+update 表名 set 列名=列名+值；---给表中所有值加值
+update 表名 set 列名=ifnull(列名，0）+10；--将空值以零对待
+delete from 表名 where 列名=值；--删除值的所有信息
+delete from 表名；--删除表中所有信息
+select 列名1，列名2 from 表名--显示列名1,2
+select * from 表名;--显示所有列
+select distinct 列名 from 表名；--剔除指定列中的重复值
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="13、where子句查询"><a href="#13、where子句查询" class="headerlink" title="13、where子句查询"></a>13、where子句查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">= 等 <>不等 >大于>=大于等于<<=
+between x and y---在x和y之间
+like(%m%-包含m,%-表任意0或多个字符,"_"表任意一个字符
+in(值1，值2）查询集合包含的值
+not--否定后面的条件
+and--和，or或，is null 是否为空，is not null-是否不为空
+as--定义别名，where不能使用列别名，可使用表别名
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="14、排序查询"><a href="#14、排序查询" class="headerlink" title="14、排序查询"></a>14、排序查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">order by 列名 asc --升序
+select 列名 from 表名 order by 列名 asc;---升序
+select 列名 from 表名 order by（列名）desc;---降序
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h5 id="15、分组查询"><a href="#15、分组查询" class="headerlink" title="15、分组查询"></a>15、分组查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">select * from 表名 group by 列名1--按照列名1分组
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="16、聚合函数查询"><a href="#16、聚合函数查询" class="headerlink" title="16、聚合函数查询"></a>16、聚合函数查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">select max(列名) as from 表名；--最大值--min最小值
+select count(*) from 表名 where 列名>值；--统计大于值的人数
+select sum(列名） as from 表名；--统计指定列的总值
+select avg(列名） as from 表名；--算出指定列的平均值
+select 列名1 coun(*),avg(列名2） from 表名 group by 列名1--多聚合一起查询
+聚合函数不能用在where子句中
+没有分组时，聚合函数不能喝其他普通字段一起查询
+select 列名1，列名2 from 表名 where 列名2=（select max(列名2) from 表名）---子查询
+ceil(数值)---向上取整floor(数值）--向下取整
+round(数值）---向下取整，rand--随机数
+select 列名1，列名2，ceil(列名2*1.1547） from 表名；--工资上涨15.47%的，向上取整
+日期函数：curdate()--返回当前年月日
+curtime()---返回当前时分秒
+now()--返回当前年月日时分秒
+date add(),date sub()--增加/减少日期
+year()--获取年，month()--月，day--日hour()--时，minute()分
+second()--秒
+select now();--查询当前系统时间
+select 列名1,year(curdate())-year(列名2) from 表名；--显示姓名和年龄
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="17、主键创建实现案例"><a href="#17、主键创建实现案例" class="headerlink" title="17、主键创建实现案例"></a>17、主键创建实现案例</h5><pre class="line-numbers language-mysql"><code class="language-mysql">CREATE TABLE provinces(id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+pname VARCHAR(20) NOT NULL);---省份表--父表--设置主键后自动创建索引
+CREATE TABLE usere(
+id  SAMLLINT UNSIGED PIMARY KEY AUTO_INACEMENT NOT NULL
+pid SMALLINT UNSIGNRD,
+FOREIGN KEY (pid) references(id) );
+参照省份表的id--字表
+pid--外键列 省份表的id为参照列
+语句：SHOW INDEXES FROM 表名\G--查看有没有建立索\G表格显示
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="19、外键"><a href="#19、外键" class="headerlink" title="19、外键"></a>19、外键</h5><h5 id="18、外键"><a href="#18、外键" class="headerlink" title="18、外键"></a>18、外键</h5><pre class="line-numbers language-mysql"><code class="language-mysql">员工表的id列（dept_id）和部门表的id一一对应，dept_id--就是外键
+foreign key(列表1_id) references 列表1（id）--添加--指定为外键
+建表后：create table 表名（id int primary key auto_increment）--建表后外键设置
+如果表已存在，可以使用下面这种方式： alter table emp add constraint fk_dept_id foreign key(dept_id) references dept(id); 其中 add constraint fk_dept_id 表示新增列，列名为 fk_dept_id ( 名字由自己定义 foreign key(dept_id) 中的 dept_id 为外键
+外键删除：1--show create table 表名--查询含有外键名的语句
+2--alter table 表名 drop foreign 外键名字---完成删除
+1对多：1~*
+一对一
+多对多
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="20、外键的作用"><a href="#20、外键的作用" class="headerlink" title="20、外键的作用"></a>20、外键的作用</h5><pre class="line-numbers language-mysql"><code class="language-mysql">外键：是用于保证数据一致性的策略
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="21、外键约束参照操作"><a href="#21、外键约束参照操作" class="headerlink" title="21、外键约束参照操作"></a>21、外键约束参照操作</h5><pre class="line-numbers language-mysql"><code class="language-mysql">参照表添加值
+INSERT provinces(pname) VALUES("A");
+INSERT provinces(pname) VALUES("B");
+INSERT provinces(pname) VALUES("C");
+子表添加值
+INSERT user1(username ,pid)VALUES("tom",3);
+INSERT user1(username ,pid)VALUES("jon",1);
+INSERT user1(username ,pid)VALUES("sum",3);
+CASCADE:
+CASCADE :从父表删除或更新且自动删除或更新子表中匹配的行
+SET NULL:从父表删除或更新行，并设置子表中的外键列 为NULL。如果使用该选项，必须保证子表列没有指定NOT NULL 
+RESTRICT :拒绝对父表的删除或更新操作。
+ NO ACTION :标准SQL的关键字，在MySQL中与RESTRICT相同
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="22、where–不能使用别名"><a href="#22、where–不能使用别名" class="headerlink" title="22、where–不能使用别名"></a>22、where–不能使用别名</h5><h5 id="22、where–不能使用别名-1"><a href="#22、where–不能使用别名-1" class="headerlink" title="22、where–不能使用别名"></a>22、where–不能使用别名</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SQL语句书写顺序
+select * | 列名--确定查询的列有哪些
+from 表名---确定要查询那张表
+where 条件---筛选过滤，剔除不符合条件的记录
+group by 分组的列----根据那一列进行分组
+having 条件--通过条件对分组后的数据进行筛选过滤
+order by 排序的列---指定那一列进行排序
+limit(countpage-1)*rowCount,rowCount--指定返回第几页记录以及每项显示多少条
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="23、SQL执行顺序"><a href="#23、SQL执行顺序" class="headerlink" title="23、SQL执行顺序"></a>23、SQL执行顺序</h5><pre class="line-numbers language-mysql"><code class="language-mysql">from 表名---确定查询那张表
+where 条件---一下全部同上
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h5 id="24、修改表操作"><a href="#24、修改表操作" class="headerlink" title="24、修改表操作"></a>24、修改表操作</h5><pre class="line-numbers language-mysql"><code class="language-mysql">alter table 表名 add 添加的列名 列名的类型--新增列
+alter table 表名 modify id int primary key---修改id列，将id设为主键
+alter table 表名 modify id int auto increment--修改id列，将id主键设为自动增长
+alter table 表名 drop 列名---删除列
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><pre class="line-numbers language-mysql"><code class="language-mysql">添加单列
+ALTER TABLE 表名 ADD[COLUMN(可不加)]列名 [FIRST(表示插在最前面)|AFTER(指定在某列后方) 被指定列 ]--省略两个指定将默认插入在后方
+例：ALTER TABLE user1 ADD password VARCHAR(32) NOT NULL AFTER 被指定列名
+添加多列
+ALTER TABLE 表名 ADD[COLUMN](列1，列2.。。。。。）
+删除列
+ALTER TABLE 表名 DROP[COLUMN] 列名
+删除多列
+ALTER TABLE 表名 DROP[COLUMN] 列名1，列名
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="25、单引号和-c—结束SQL语句"><a href="#25、单引号和-c—结束SQL语句" class="headerlink" title="25、单引号和\c—结束SQL语句"></a>25、单引号和\c—结束SQL语句</h5><h5 id="26、基础语句"><a href="#26、基础语句" class="headerlink" title="26、基础语句"></a>26、基础语句</h5><pre class="line-numbers language-mysql"><code class="language-mysql">select distinct 列名 from 表名--剔除有重复的数据
+delete from 表名 where   判断条件--删掉表中符合条件的内容
+update 表名 set 列=值 或 where 判断条件--给所有加值或符合条件的加值
+insert into 表名 values（给表调加的值）；--给表添加值
+primary key auto_increment--设置主键和自增
+desc 表名--查看表结
+delete from 表名--删表名
+create table 表名（表结构）--创建表
+drop table if exists 表名---删除表
+show tables--查看库的所有表
+use 库名--进入库
+create database if not exises 库名 charset utf8;--创建库
+drop database if exists 库名--删除库
+show create database 库名--查看建库时的语句
+show databaes（）;--查看已经进入的库
+show databases;--看MySQL的所有库
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="27、where查询"><a href="#27、where查询" class="headerlink" title="27、where查询"></a>27、where查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">语句：select  显示的列 from 表名  where  判断条件
+加减乘除大小等于 or and  in (not in)--不在 ifnull(判断指定列是否包含null,有则第二条替换)  (is null)--为空
+(not null)--不为空 like '%'--开头包含结尾  '*'--任意  “刘_”--以刘开头
+year（列名）--年 month(now())+1=month(列名）--下个月  month(now())=month(列名）+1--上个月 
+BINARY--区分大小写--如果内容小写，查询输入大写则查不到，默认不区分
+UNION[ALL（包含重复数据）|DISTINCT（删除结果集重复数据）]--接在条件后面
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="28、分组查询"><a href="#28、分组查询" class="headerlink" title="28、分组查询"></a>28、分组查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">语句：select 查询的列 from 表名  group by 根据指定的列进行分组
+例子：select count(*)[统计人数] from emp group by jod;--按照职位进行分组
+计算格式：select 计算函数(列名) from 表名
+sum--求和 avg--平均值  max--最大值  min--最小值 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h5 id="29、排序查询"><a href="#29、排序查询" class="headerlink" title="29、排序查询"></a>29、排序查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">语句：select 显示的列 from 表名  order by 排序的列 asc;---升序
+desc--降序
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h5 id="30、分页查询"><a href="#30、分页查询" class="headerlink" title="30、分页查询"></a>30、分页查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">语句：select * from 表名 limit 页数,显示数据数（计算公式(页码-1)*每页显示记录数）
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="31、关联查询"><a href="#31、关联查询" class="headerlink" title="31、关联查询"></a>31、关联查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">select * from 列名 left join 表名 on 条件(例如id相等）--左连接--左边全查出，右边只查匹配的
+left换成right就右连接--刚好相反
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h5 id="32、子查询"><a href="#32、子查询" class="headerlink" title="32、子查询"></a>32、子查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">语句：select 显示的列 from 表名 where  判断条件(sal(列名)>(select  sal from 表名 where name='王海涛')
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="33、关联查询"><a href="#33、关联查询" class="headerlink" title="33、关联查询"></a>33、关联查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">select 显示表1表2符合的列  from 表名 a 表名2  b(给表起别名)  where a-id=b-dept-id and d-name="培优部"--where后面基本都是关联条件
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="34、自查询"><a href="#34、自查询" class="headerlink" title="34、自查询"></a>34、自查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">select  查询的列 from 查询的表（表1 表2） where  判断条件（表1id=表2id）
+where --后面不能使用分组函数
+select 显示列名.min(判断列名) from 表名 group by 显示列名---分组
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h5 id="35、常用命令"><a href="#35、常用命令" class="headerlink" title="35、常用命令"></a>35、常用命令</h5><pre class="line-numbers language-mysql"><code class="language-mysql">show databases;--|查看服务器所有数据库
+use myaql;
+use test;----进入某一数据
+select database();---查看已进入的数据库
+show tables;--查看当前数据库的所有表
+drop database mydb11;--删除指定数据库
+drop database if exists mydab1--如果没有就创建再删除
+create database mysql character utf8;--创建库指定编码为utf8;
+create database if not exists mydb1 charset utf8--没有就创建
+show create database mydb1;--查看建库时语句
+use mydb1,drop table if exists stu;---如果没有就创建再删除表
+use myab1;
+create table stu(id int primary key auto_increment,--设置为健值
+name vachar（10）---字符串类型
+birthday  date,---时间类型
+desc stu;---查看表结构
+insert into stu(id,name,birthday)---指定顺序添加
+value(1,'good','2019');
+insert into stu values(2,'第二种方式','2019');
+update stu set score=score+10--给所有列都加10
+update stu set score=88 where name='good';--给指定名字改值
+delete from stu;--删除记录语法
+delete from stu where name='老刘' or name='删除'--或删除
+select * from emp;--查看所有列
+select dept,job from emp;--筛选查看
+select distinct dept from emp;--剔除重复记录
+select name ，sal from emp wher sal>3000--大于筛选
+ifnull(列，值)---判断是否包含null值
+select sal between 300 and 400--在  什么和什么之间
+in（100,200,300）--什么和和什么和什么之间
+not in(10,200,300)--不在什么和什么和什么之间
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="36、or—或"><a href="#36、or—或" class="headerlink" title="36、or—或"></a>36、or—或</h5><pre class="line-numbers language-mysql"><code class="language-mysql">模糊查询
+like '刘%';--以刘开头
+like ‘%刘%’--包含刘
+like ‘刘+下划线’---刘开头且为两字的
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h5 id="37、分组查询"><a href="#37、分组查询" class="headerlink" title="37、分组查询"></a>37、分组查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">select count(*) from emp group by job;--按照职位分组
+max--最大
+*--如果为null就统计
+sum--和
+year(时间名称）---提取年月日时分秒--前面换单词
+select year(now());--填单词获取当前年月日时分秒
+where month(now())+1=month(birthday);--下个月
+where month(now())=month(birthday)+1;--上个月
+curdate() 获取当前日期 年月日--
+curtime() 获取当前时间 时分秒 -curdate+curtime=now
+sydate()--获取当前日期年月日时分秒=now
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="38、排序查询"><a href="#38、排序查询" class="headerlink" title="38、排序查询"></a>38、排序查询</h5><pre class="line-numbers language-mysql"><code class="language-mysql">order by 列 asc--升序
+order by 列 desc--降序
+limit (页码-1)*每页显示记录数, 每页显示记录数
+select * from emp limit 0,3;--第一页
+select * from emp limit 3,3;--第二页
+select*from 列 left join 表--左连接查询
+select*fro,m 列 right join 表--右连接查询
+列 a--重命名
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="39、内连接"><a href="#39、内连接" class="headerlink" title="39、内连接"></a>39、内连接</h5><pre class="line-numbers language-mysql"><code class="language-mysql">UPDATE tab_goods INNER JOIN(内连接) tab_goods_cate（被链接的表名）ON（链接调加） goods_cate = cate_name(值或内容相等的链接条件)
+
+   SET(更新的值） goods_cate = cate_id(表1的这行改成新建表的id值)  内连接：两张表的交集
+
+SELECT 表1id，表1名字 FROM 表1名  INNER JOIN  表2名 
+ON 表1名.id=表2名.id;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="40、左外连接：符和左边全部右表显示符合条件的"><a href="#40、左外连接：符和左边全部右表显示符合条件的" class="headerlink" title="40、左外连接：符和左边全部右表显示符合条件的"></a>40、左外连接：符和左边全部右表显示符合条件的</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT 表1id，表1名字 FROM 表1名 LEFT JOIN  表2名  ON 表1名.id=表2名.id;
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="41、右外连接–与左相反"><a href="#41、右外连接–与左相反" class="headerlink" title="41、右外连接–与左相反"></a>41、右外连接–与左相反</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT 表1id，表1名字 FROM 表1名 RIGHT JOIN  表2名  ON 表1名.id=表2名.id;
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="42、多表连接–三表连接"><a href="#42、多表连接–三表连接" class="headerlink" title="42、多表连接–三表连接"></a>42、多表连接–三表连接</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT 列名1，列名2 FROM 表名 AS g INNER JOIN 表名2 AS  c ON g.cate_id=c.cate_id   INNER JOIN  列名 AS b ON g.brand_id=b.brand 
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="43、无限极分类设计"><a href="#43、无限极分类设计" class="headerlink" title="43、无限极分类设计"></a>43、无限极分类设计</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT s.type_id,s.type_name,p.type_name FROM tdb_goods_types AS s   LEFT JOIN tdb_goods_types AS p ON s.parent_id = p.type_id
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="44、补充4、SQL语句的书写顺序和执行顺序"><a href="#44、补充4、SQL语句的书写顺序和执行顺序" class="headerlink" title="44、补充4、SQL语句的书写顺序和执行顺序:"></a>44、补充4、SQL语句的书写顺序和执行顺序:</h5><h5 id="45、SQL语句的书写顺序："><a href="#45、SQL语句的书写顺序：" class="headerlink" title="45、SQL语句的书写顺序："></a>45、SQL语句的书写顺序：</h5><pre class="line-numbers language-mysql"><code class="language-mysql">    select...
+    from...
+    where...
+    group by...
+    order by...
+    ...
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="46、SQL语句的执行顺序："><a href="#46、SQL语句的执行顺序：" class="headerlink" title="46、SQL语句的执行顺序："></a>46、SQL语句的执行顺序：</h5><pre class="line-numbers language-mysql"><code class="language-mysql">    from... -- 确定要查询的是哪张表 (定义表别名)
+    where... -- 从整张表的数据中进行筛选过滤
+    select... -- 确定要显示哪些列 (定义列别名)
+    group by... -- 根据指定的列进行分组
+    order by... -- 根据指定的列进行排序
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="47、存储过程"><a href="#47、存储过程" class="headerlink" title="47、存储过程"></a>47、存储过程</h5><pre class="line-numbers language-mysql"><code class="language-mysql">存储过程：是SQL语句和控制语句的预编译集合，以一个名称存储并作为一个单元处理
+优点：增强SQL语句的功能和灵活性
+实现较快的执行速度
+减少网络流量
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h5 id="48、函数体"><a href="#48、函数体" class="headerlink" title="48、函数体"></a>48、函数体</h5><pre class="line-numbers language-mysql"><code class="language-mysql">IN：表示改参数的值必须在调用存过过程时指定--只能进不能出
+OUT：表示该参数的值可以被存储过程改变，并且可以返回
+INOUT：表示该参数的调用时指定，并且可以被改变和返回
+语句：CREATE[DEFINER=&#123;user|CURRENT_USER&#125;]--可省略--省略表示登录当前mysql用户
+PROCEDURE sp_name（存储过程的名字)）([proc_parameter[....]](可以带有0个到多个的???))?
+[characteristic....]routine_body
+proc_parameter:
+[IN|OUT|INOUT]parm_name type--参数类型
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="49、过程体"><a href="#49、过程体" class="headerlink" title="49、过程体"></a>49、过程体</h5><pre class="line-numbers language-mysql"><code class="language-mysql">由合法的SQL语句构成
+可以是任意的SQL语句：存储过程不能创建表和库，主要指：增删改查或多表连接
+如果为复合结构则使用BEGIN...END语句--超过两个就要BEGIN...END包在其中
+复合结构可以包含声明，循环，控制结构
+[]创建存储过程
+CREATE PROCEDURE sql() SELECTION VERSION();
+调用存储过程
+CALL sql--调无参
+CALL sql(）--调无参
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="50、调用有参"><a href="#50、调用有参" class="headerlink" title="50、调用有参"></a>50、调用有参</h5><pre class="line-numbers language-mysql"><code class="language-mysql">DELIMITER //--把分号定界符改成双下滑线
+创建过程
+CREATE PROCEDURE removeUserById(存储过程的名字，随便起)(IN(in类型的参数) id(参数名) INT（数据类型）  UNSIGNED)
+BEGIN(一个也可以带有)
+SQL语句：DELETE FROM users WHERE id(数据表当中的字段) = id(需要传递的参数);--批??????????
+END
+//
+DELIMITER ;--定界符再修改成分号
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="51、调用"><a href="#51、调用" class="headerlink" title="51、调用"></a>51、调用</h5><pre class="line-numbers language-mysql"><code class="language-mysql">CALL removeUserById(3)--调用上面封装的存储过程
+参数名id和表中字段重名时就全部把表的内容删除了--注意注意
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h5 id="52、删除存储过程"><a href="#52、删除存储过程" class="headerlink" title="52、删除存储过程"></a>52、删除存储过程</h5><pre class="line-numbers language-mysql"><code class="language-mysql">DROP PROCEDURE [IF EXISTS] 存储过程的名字
+DROP PROCEDURE [IF EXISTS] 存储过程的名字
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h5 id="53、重新构建存储-过程"><a href="#53、重新构建存储-过程" class="headerlink" title="53、重新构建存储 过程"></a>53、重新构建存储 过程</h5><pre class="line-numbers language-mysql"><code class="language-mysql">DELIMITER //--把分号定界符改成双下滑线
+CREATE PROCEDURE removeUserById(存储过程的名字，随便起)(IN(in类型的参数) p-id(参数名) INT（数据类型）  UNSIGNED)
+BEGIN(一个也可以带有)
+SQL语句：DELETE FROM users WHERE id(数据表当中的字段) =p-id(需要传递的参数);--批量删除操作
+END
+//
+DELIMITER ;--定界符再修改成分号
+CALL  removeUserById(22)--调用上面封装的存储过程--删除了id=22的记录
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="54、删除id不固定的记录并且返回剩余的固定数"><a href="#54、删除id不固定的记录并且返回剩余的固定数" class="headerlink" title="54、删除id不固定的记录并且返回剩余的固定数"></a>54、删除id不固定的记录并且返回剩余的固定数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">DELIMITER //--把分号定界符改成双下滑线
+CREATE PROCEDURE removeUserAndReturnUserNums(存储过程名)(IN p-id INT UNSIGNED,OUT userNums INT UNSIGNED)
+BEGIN
+DELETE FROM users WHERE id=p-id;--第一个删除语句
+SELECT count(id)（返回总数） FROM users INTO(将返回的总数放到userNums中）userNums；
+END
+//
+DELIMITER ;--定界符再修改成分号
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="55、-调用"><a href="#55、-调用" class="headerlink" title="55、 调用"></a>55、 调用</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT COUNT(id) FROM users;--先看总id有多少
+CLAA removeUserAndReturnUserNums（27，@nums(接收返回的总数--代表变量）;
+SELECT @nums;--查看返回的总数
+局部变量--只在BEGIN里有效
+SET @i =7;--对当前MySQL用户都--声明用户变量
+BEGIN...END声明的变量叫局部变量
+通过INTO,@(艾台）声明的变量叫用户变量--作用域在当前用户内
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="56、多参多返回值"><a href="#56、多参多返回值" class="headerlink" title="56、多参多返回值"></a>56、多参多返回值</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT ROW_COUNT();---得到删除更新的总数
+INSERT 表名（列名）VALUES(值1),(值2),(值3);--插入多行
+定义开始
+DELIMITER //--把分号定界符改成双下滑线
+CREATE PROCEDURE removeUserById(IN p-age SMALLINT UNSIGGED,
+OUT delete SMALLINT UNSIGNED,OUT user SMALLINT UNSIGNED)
+DELETE FROM 表名 WHERE  age = p-age;--传参删除
+SELECT EOW_COUNT(id） INTO  deleteU--返回删除更新总数
+SELECT COUNT(id) FROM users(表名） INTO usec;---返回剩余总数
+END
+//
+DELIMITER //
+CALL removeUserById（20，@a ，@b）--调用
+SELECT @a,@b;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="57、存储过程与自定义函数的区别"><a href="#57、存储过程与自定义函数的区别" class="headerlink" title="57、存储过程与自定义函数的区别"></a>57、存储过程与自定义函数的区别</h5><pre class="line-numbers language-mysql"><code class="language-mysql">存储过程实现的功能要复杂一些，而函数的针对性更强
+实际开发中存储过程常用
+可以通过程序实现存储过程的功能但是效率没有存储过程高
+存储过程可以有多个返回值，而函数只能有个返回值
+存储过程一般独立的来执行，而函数可以作为其他SQL语句的组成部分来出现
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="58、修改存储过程：只能修改简单的属性或者重新重新创建"><a href="#58、修改存储过程：只能修改简单的属性或者重新重新创建" class="headerlink" title="58、修改存储过程：只能修改简单的属性或者重新重新创建"></a>58、修改存储过程：只能修改简单的属性或者重新重新创建</h5><h5 id="59、自定义函数"><a href="#59、自定义函数" class="headerlink" title="59、自定义函数"></a>59、自定义函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">内置函数举例：字符，数值，日期时间，加密等函数
+定义：用户自定义函数（user-defined function,UDF）是一种对mysql扩展的途径，其用法与内置函数相同
+两个必要条件：参数，返回值（ 可无参，但一般都有返回值）
+函数可以返回和接收任意类型的值，
+参数不能超过1024个
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="60、创建函数"><a href="#60、创建函数" class="headerlink" title="60、创建函数"></a>60、创建函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">CREATE FUNCTION name(函数名）
+RETURNS(返回值的类型）
+&#123;STRING|INTEGER|REAL|DECIMAL&#125;（类型举例）
+routine_body(函数体）可以包含：任意合法的SQL语句构成
+也可以是简单SELECT或INSERT语句
+如果为复合结构则使用BEGIN...END语句
+复合结构可以包含声明，循环，控制结构
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="61、创建函数举例"><a href="#61、创建函数举例" class="headerlink" title="61、创建函数举例"></a>61、创建函数举例</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SET NAMES gbk--改编码方式
+SELECT NOW（）；当前时间
+SELECT DATE_FORMAT(NOW(),'%Y年%m月%d日 %H点：%i分：%s秒');
+开始封装这个过程
+CREATE FUNCTION f1() RETURNS VARCHAR(30)
+RETURN DATE_FORMAT(NOW(), '%Y年%m月%d日 %H点：%i分：%s秒');
+SELECT f1()--调用--不带参数
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="62、创建带有参数的函数"><a href="#62、创建带有参数的函数" class="headerlink" title="62、创建带有参数的函数"></a>62、创建带有参数的函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">CREATE FUNCTION f2(numl SMALLINT UNSIGNED,num2 SMALLINT UNSIGNED)
+RETURNS FLOAT(10,2) UNSIGNED
+RETURN (numl+num2)/2;--封装完成 
+SELECT f2(20,10);--传参调用
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h5 id="63、创建带有复合结构的函数"><a href="#63、创建带有复合结构的函数" class="headerlink" title="63、创建带有复合结构的函数"></a>63、创建带有复合结构的函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">DELIMITER //
+CREATE FUNCTION adduser(username VARCHAR(20))
+RETURNS INT UNSIGNED
+BEGIN--创建存储过程
+INSERT test(uscrname) VALUES(username);
+RETURN LAST_INSERT_ID();
+END
+//
+DELIMITER ;
+SELECT adduser('Rose'）--传入参数插入
+DROP FUNCTION [IF EXISTS] 函数名--删除函数
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="64、运算符和函数"><a href="#64、运算符和函数" class="headerlink" title="64、运算符和函数"></a>64、运算符和函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">运算符
+函数
+字符函数
+数值运算符与函数
+比较运算域函数
+日期时间函数
+信息函数
+聚合函数
+加密函数
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="65、字符函数"><a href="#65、字符函数" class="headerlink" title="65、字符函数"></a>65、字符函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT CONCAT (“iomoc”，“mysql”）--结果iomocmysql--多个连接也可以--- 字符连接
+SELECT CONCAT (列名1，列名2）AS 别名 FROM 表名；//两列拼接-- 字符连接
+SELECT CONCAT_WS ('|','A','B','C')//A|B|C-- - 使用指定的分隔符进行字符连接
+SELECT FORMAT (125660.75,1)//12,5660.8保留一位小数且四舍五入---- 数字格式化
+SELECT LOWER ('MySQL')--mysql--- -转化成小写字母
+SELECT UPPER ('mysql')--MySQL---- 转换成大写字母
+SELECT LEFT ('MySQL',2)--My--- 获取左侧字符
+SELECT LOWER (LEFT('MySQL',2));--函数嵌套--取两位在转小写my-- 切割转换小写
+SELECT RIGHT (('MySQL',3)--SQL--- 获取右侧字符
+LENGTH()---获取字符串长度
+LTRIM()----删除前导空格
+RTRIM()---删除后续空格
+TRIM()---删除前导和后续空格
+SUBSTRING()---字符串截取
+[NOT]LIKE()---模式匹配
+REPLACE()---字符串贴换
+数据截取都是1开始：正截整数，倒截取用负数，也可以只有一个起始点
+SELECT * FROM 表名 WHERE 列名 LIKE '%1%%' ESCAPE '1';--表示1后面%不是通配符
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="66、数值运算符与函数"><a href="#66、数值运算符与函数" class="headerlink" title="66、数值运算符与函数"></a>66、数值运算符与函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT 3+4;
+SELECT CEIL(3.01)--4-- 进1取整
+SELECT FLOOR(3.99)--3---- 舍一取整
+SLEECT 3 DIV 4;--0---- 整数除法
+SELECT 5%3=SELECT 5MOD3;-- 同理--取余数(取模)
+SELECT POWER(3,3)--平方--- 幕运算
+SELECT ROUND(3.65231,2)--保留两位两数--- 四舍五入
+SELECT TRUNCATE(125.89,1)125---- 数字截取
+SELECT TRUNCATE(125.89,-1)120--不做四舍五入操作--- 数字截取
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="67、比较运算与函数"><a href="#67、比较运算与函数" class="headerlink" title="67、比较运算与函数"></a>67、比较运算与函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT 15 BETWEEN 1 AND 22;--1,1--表示true 0-flase--- [NOT]BETWEEN...AND【不】在范围之内
+SELECT 35 NOT BETWEEN 1 AND 22;--1,1--表示true 0-flase--- 【NOT】IN()--【不】在列出值范围内
+SELECT 10 IN(5,10,15,20);--1----- 在
+SELECT NULL IS NULL--1---- IS [NOT] NULL【不】为空
+SELECT * FROM 表名 WHERE 列名 IS NULL--那些为空
+SELECT * FROM 表名 WHERE 列名 IS NOT NULL--那些不为空
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="68、日期时间函数"><a href="#68、日期时间函数" class="headerlink" title="68、日期时间函数"></a>68、日期时间函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">NOW()---当前日期和时间
+CURDATE()----当前日期
+CURTIME()---当前时间
+DATE_ADD()---日期变化
+DATEDIFF()---日期差值
+DATE_FORMAT()--日期格式化
+SELECT DATE_ADD('2019-11-23',INTERVAL 365 DAY)--2020-11-23--负数为减
+YEAR--年 WEEK--星期--加单位就行
+SELECT DATEDIFF('2019-11-23','2018-11-23');--365
+SELECT DATE_FORMAT('2014-3-2','%m%d%Y')--03/02/2014
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="69、信息函数"><a href="#69、信息函数" class="headerlink" title="69、信息函数"></a>69、信息函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">CONNECTION_ID()--连接ID
+DATEBASE()---当前数据库
+LAST_INSERT_ID()---最后插入记录的ID号
+USER()--当前用户
+VERSION()---版本信息
+SELECT CONNECTION_ID()--当前线程的id值
+SELECT LAST_INSERT_ID;\--需要有设置主键和自增，一次多写入只算第一次
+INSERT 表名（列名1，列名2）VALUES('值1','值2');--插入
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="70、聚合函数"><a href="#70、聚合函数" class="headerlink" title="70、聚合函数"></a>70、聚合函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">AVG()--平均值
+COUNT()---计数
+MAX()---最大值
+MIN()---最小值
+SUM()---求和
+SELECT AVG(3,4,5);--可以添加列和添加在四舍五入里
+SELECT MAX(列名）AS counts FROM 表名
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="71、加密函数"><a href="#71、加密函数" class="headerlink" title="71、加密函数"></a>71、加密函数</h5><pre class="line-numbers language-mysql"><code class="language-mysql">MD5()--信息摘要算法
+PASSWORD()--密码算法
+SELECT MD5('admin')--32位数加密字段
+SELECT PASSWORD('admin')--
+SET PASSWORD=PASSWORD('dimitar');--修改当前用户数据库登录密码
+exit;--退出登录
+cls;--清除屏幕内容
+mysql -uroot -pdimitar--把密码改回来
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="72、事务"><a href="#72、事务" class="headerlink" title="72、事务"></a>72、事务</h5><pre class="line-numbers language-mysql"><code class="language-mysql">BEGIN或START TRANSACTION--显式开启一个事务
+COMMIT WORK等价于COMMIT--提交--永久保存
+SAVEPOINT 参数 允许在事务中设置一个保存点也可多个
+RELEASE SAVEPOINT 参数--删除一个保存点
+ROLLBACK TO  参数把事务回滚到标记点
+SET TRANSACTION--设置事务隔离级别
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="73、事务处理主要方法"><a href="#73、事务处理主要方法" class="headerlink" title="73、事务处理主要方法"></a>73、事务处理主要方法</h5><pre class="line-numbers language-mysql"><code class="language-mysql">BEGN--开始一个事务
+ROLLBACK--回滚
+COMMIT--提交
+SET AUTOCOMMIT=0--禁止自动提交
+SET AUTOCOMMIT=1--开启自动提交
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="74、事务的定义"><a href="#74、事务的定义" class="headerlink" title="74、事务的定义"></a>74、事务的定义</h5><pre class="line-numbers language-mysql"><code class="language-mysql">指作为单个逻辑工作单元执行的一系列操作，要么都执行，要么都不执行
+绑定一堆增删改查的SQL语句，要么都成功执行，要么都执行不成功。
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h5 id="75、索引"><a href="#75、索引" class="headerlink" title="75、索引"></a>75、索引</h5><pre class="line-numbers language-mysql"><code class="language-mysql">索引：是对数据表一列或多列的值进行排序的一种结构
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="76、修改存储引擎的方法"><a href="#76、修改存储引擎的方法" class="headerlink" title="76、修改存储引擎的方法"></a>76、修改存储引擎的方法</h5><pre class="line-numbers language-mysql"><code class="language-mysql">修改配置文件：default-storage-engine=engine
+建表时指定：CREATE TABLE 表（列定义内容） ENGINE=MyISAM  DEFAULT CHARSET =utf8
+建表后：ALTER TABLE 表名 ENGINE =InnoDB;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h5 id="77、事务的四大特性"><a href="#77、事务的四大特性" class="headerlink" title="77、事务的四大特性"></a>77、事务的四大特性</h5><pre class="line-numbers language-mysql"><code class="language-mysql">是用于保证数据库的完整性
+原子性 （Atomicity） --所有操作是一个整体-要么全部执行要么全部都不执行
+一致性 （Consistency） ---数据库状态与其他业务规则保持一致（无论成功与否，两个账户总金额之和不变）
+隔离性 （Isolation） ---各个事务之间相互隔离，互不影响--隔离级别高时
+持久性 （Durability） --事务操作成功时，就持久的保存到硬盘上
+简称：ACID
+开启事务时，在提交或回滚（撤销）成功之前，里面的数据不变，提交或回滚（撤销）后才会改变。
+start transaction--开起事务
+rollback--回滚
+commit--提交
+quit---中断操作 
+脏读--别的窗口可以读到了事务为提交前的数据
+不可重复读--在这个事务结束之前，读到了别的事务中提交后数据--两次查询不一致
+幻读---在这个事务结束之前，读到别的事务插入或删除--导致一个事务查询不一致--无法插入
+只是查询就不用使用事务  增删改查--必须要用事务
+JDBC--默认开启事务--一天语句即为事务--开启和提交
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="78、事务隔离级别"><a href="#78、事务隔离级别" class="headerlink" title="78、事务隔离级别"></a>78、事务隔离级别</h5><pre class="line-numbers language-mysql"><code class="language-mysql">语句：set tx isolation='read-uncommitted(级别)';
+READ UNCOMMITFED(读未提交数据）--安全级最低性能最好--（可出现脏读，不可重复读 幻读）
+READ COMMITTED(读已提交，Oracle默认）--防脏读，不防不可重复读和幻读
+REPEATABLE READ(可重复读mysql默认）--防脏读和不可重复读-不防幻读
+SERIALIZABLE(串行化）--不出现任何问题--性能最差
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="79、设置隔离级别"><a href="#79、设置隔离级别" class="headerlink" title="79、设置隔离级别"></a>79、设置隔离级别</h5><pre class="line-numbers language-mysql"><code class="language-mysql">select@@tx isolation;--查询前设置隔离级别
+JDBC设置隔离级别
+调用：Connection.setTransactionIsolation(in level)
+1-读未提交 2-读已提交 4-读可重复 8-串行化 0-不使用事务
+索引分类：普通索引，唯一索引，全文索引，btree索引，hash索引
+CSV存储引擎不支持索引
+BlacKHole:黑洞引擎，写入的数据都会消失，一般用于做数据复制的中继
+常用两种存储引擎
+MyISAM:适用于事务的处理不多的情况
+InnoDB：适用于事务处理比较多，需要有外键支持的情况
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h5 id="80、并发控制"><a href="#80、并发控制" class="headerlink" title="80、并发控制"></a>80、并发控制</h5><pre class="line-numbers language-sql"><code class="language-sql">定义：当多个连接对记录进行修改时保证数据的一致性和完整性
+解决这个问题需要有锁控制
+共享锁（读锁）：在同一时间段内，多个用户可以读取同一个资源
+排他锁（写锁）：在任何时候只能有一个用户写入资源，当进行写锁时会阻塞其他的读锁或者写锁操作
+锁的颗粒：即锁的单位，对修改的数据精确加锁即可（对表或者某条数据）
+锁颗粒：
+表锁：是一种开销最小的锁策略
+行锁：开销最大的锁策略<span class="token comment" spellcheck="true">--支持并发的一种情况--因为每行都有可能加锁</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>原文连接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/HQJ520/article/details/108171581">https://blog.csdn.net/HQJ520/article/details/108171581</a></p><p>学习链接：<a target="_blank" rel="noopener" href="https://shockerli.net/post/1000-line-mysql-note/">https://shockerli.net/post/1000-line-mysql-note/</a></p><h4 id="二、使用过程笔记"><a href="#二、使用过程笔记" class="headerlink" title="二、使用过程笔记"></a>二、使用过程笔记</h4><h5 id="1、where、ORDER-BY、limit顺序"><a href="#1、where、ORDER-BY、limit顺序" class="headerlink" title="1、where、ORDER BY、limit顺序"></a>1、where、ORDER BY、limit顺序</h5><p>where-&gt;ORDER BY-&gt;limit: ORDER BY排序字段 DESC 降序。</p><pre class="line-numbers language-sql"><code class="language-sql">sql<span class="token operator">=</span><span class="token number">f</span>"<span class="token keyword">SELECT</span> position_name<span class="token punctuation">,</span>remarks <span class="token keyword">FROM</span> sys_position <span class="token keyword">where</span> position_name <span class="token operator">like</span> '<span class="token operator">%</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;positionName&amp;#125;%' ORDER BY id DESC"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h5 id="2、在python使用时，sql语句需要传入方法中的一个参数来完成查询操作，则需要在语句前加上f，再在需要传入方法中的参数地方用-参数-来传入。"><a href="#2、在python使用时，sql语句需要传入方法中的一个参数来完成查询操作，则需要在语句前加上f，再在需要传入方法中的参数地方用-参数-来传入。" class="headerlink" title="2、在python使用时，sql语句需要传入方法中的一个参数来完成查询操作，则需要在语句前加上f，再在需要传入方法中的参数地方用{参数}来传入。"></a>2、在python使用时，sql语句需要传入方法中的一个参数来完成查询操作，则需要在语句前加上f，再在需要传入方法中的参数地方用{参数}来传入。</h5><p>列子：pageSize、current是方法传入的参数，以及这两个参数是查询必须要的参数</p><pre class="line-numbers language-sql"><code class="language-sql">sql <span class="token operator">=</span> <span class="token number">f</span>'<span class="token keyword">SELECT</span> org_name<span class="token punctuation">,</span>parent_id<span class="token punctuation">,</span>is_enable<span class="token punctuation">,</span>update_at<span class="token punctuation">,</span>update_by<span class="token punctuation">,</span>create_at<span class="token punctuation">,</span>create_by <span class="token keyword">FROM</span> <span class="token punctuation">`</span>sys_organization<span class="token punctuation">`</span> <span class="token keyword">where</span> <span class="token punctuation">(</span>org_name <span class="token operator">like</span> "<span class="token operator">%</span><span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;orgName&amp;#125;%" and parent_id = &amp;#123;parentId&amp;#125; and is_enable = &amp;#123;isEnable&amp;#125;) ORDER BY id DESC limit &amp;#123;pageSize * (current-1)&amp;#125;,&amp;#123;pageSize&amp;#125;’</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>注意：传入的参数如果时字符串，得在{}外面必须加“”，不然查询时会出错；其他int类型不用加：Mysql查询错误： (1054, “Unknown column ‘接口脚本测试5’ in ‘where clause’”)</p><p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20211209105119695.png" alt="image-20211209105119695"></p></div><hr><div class="reprint" id="reprint-statement"><div class="reprint__author"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-user">文章作者: </i></span><span class="reprint-info"><a href="/about" rel="external nofollow noreferrer">念</a></span></div><div class="reprint__type"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-link">文章链接: </i></span><span class="reprint-info"><a href="https://www.congxww.top/posts/3708529067.html">https://www.congxww.top/posts/3708529067.html</a></span></div><div class="reprint__notice"><span class="reprint-meta" style="font-weight:700"><i class="fas fa-copyright">版权声明: </i></span><span class="reprint-info">本博客所有文章除特別声明外，均采用 <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a> 许可协议。转载请注明来源 <a href="/about" target="_blank">念</a> !</span></div></div><script async defer>document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }</script><div class="tag_share" style="display:block"><div class="post-meta__tag-list" style="display:inline-block"><div class="article-tag"><a href="/tags/MySQL/"><span class="chip bg-color">MySQL</span></a></div></div><div class="post_share" style="zoom:80%;width:fit-content;display:inline-block;float:right;margin:-.15rem 0"><link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css"><div id="article-share"><div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div><script src="/libs/share/js/social-share.min.js"></script></div></div></div><style>#reward{margin:40px 0;text-align:center}#reward .reward-link{font-size:1.4rem;line-height:38px}#reward .btn-floating:hover{box-shadow:0 6px 12px rgba(0,0,0,.2),0 5px 15px rgba(0,0,0,.2)}#rewardModal{width:320px;height:350px}#rewardModal .reward-title{margin:15px auto;padding-bottom:5px}#rewardModal .modal-content{padding:10px}#rewardModal .close{position:absolute;right:15px;top:15px;color:rgba(0,0,0,.5);font-size:1.3rem;line-height:20px;cursor:pointer}#rewardModal .close:hover{color:#ef5350;transform:scale(1.3);-moz-transform:scale(1.3);-webkit-transform:scale(1.3);-o-transform:scale(1.3)}#rewardModal .reward-tabs{margin:0 auto;width:210px}.reward-tabs .tabs{height:38px;margin:10px auto;padding-left:0}.reward-content ul{padding-left:0!important}.reward-tabs .tabs .tab{height:38px;line-height:38px}.reward-tabs .tab a{color:#fff;background-color:#ccc}.reward-tabs .tab a:hover{background-color:#ccc;color:#fff}.reward-tabs .wechat-tab .active{color:#fff!important;background-color:#22ab38!important}.reward-tabs .alipay-tab .active{color:#fff!important;background-color:#019fe8!important}.reward-tabs .reward-img{width:210px;height:210px}</style><div id="reward"><a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a><div id="rewardModal" class="modal"><div class="modal-content"><a class="close modal-close"><i class="fas fa-times"></i></a><h4 class="reward-title">纳尼！</h4><div class="reward-content"><div class="reward-tabs"><ul class="tabs row"><li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li><li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li></ul><div id="alipay"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码"></div><div id="wechat"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码"></div></div></div></div></div></div><script>$(function(){$(".tabs").tabs()})</script></div></div><link rel="stylesheet" href="/libs/gitalk/gitalk.css"><link rel="stylesheet" href="/css/my-gitalk.css"><div class="card gitalk-card" data-aos="fade-up"><div class="comment_headling" style="font-size:20px;font-weight:700;position:relative;padding-left:20px;top:15px;padding-bottom:5px"><i class="fas fa-comments fa-fw" aria-hidden="true"></i> <span>评论</span></div><div id="gitalk-container" class="card-content"></div></div><script src="/libs/gitalk/gitalk.min.js"></script><script>let gitalk = new Gitalk({
+        clientID: '0d1cdbb1f06fceb65036',
+        clientSecret: '56f3bb07483ea94112653ed00e5b7d9d7fadce2c',
+        repo: 'https://github.com/alacong/',
+        owner: 'congxww8',
+        admin: ["congxww8"],
+        id: '2021-12-08T16-08-54',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');</script><style>.valine-card{margin:1.5rem auto}#vcomments .vcards .vcard{padding:15px 20px 0 20px;border-radius:10px;margin-bottom:15px;box-shadow:0 0 4px 1px rgba(0,0,0,.12);transition:all .3s}#vcomments .vcards .vcard:hover{box-shadow:0 0 8px 3px rgba(0,0,0,.12)}#vcomments .vcards .vcard .vh .vcard{border:none;box-shadow:none}img.vimg{transition:all 1s}img.vimg:hover{transform:rotate(360deg);-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);-ms-transform:rotate(360deg)}#veditor:focus{background-position-y:200px;transition:all .2s ease-in-out 0s}.v .vwrap{padding:0 0 20px}.v .veditor{min-height:7rem;resize:none}.valine-card .card-content{padding:20px 20px 5px 20px}#vcomments textarea{margin-top:-30px;box-sizing:border-box;background:url(https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp) 100% 100% no-repeat}#vcomments p{margin:2px 2px 10px;font-size:1.05rem;line-height:1.78rem}#vcomments blockquote p{text-indent:.2rem}#vcomments a{padding:0 2px;color:#4cbf30;font-weight:500;text-decoration:none}#vcomments img{max-width:100%;height:auto;cursor:pointer}#vcomments ol li{list-style-type:decimal}#vcomments ol,ul{display:block;padding-left:2em;word-spacing:.05rem}#vcomments ul li,ol li{display:list-item;line-height:1.8rem;font-size:1rem}#vcomments ul li{list-style-type:disc}#vcomments ul ul li{list-style-type:circle}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}#vcomments table,td,th{border:0}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments h1{font-size:1.85rem;font-weight:700;line-height:2.2rem}#vcomments h2{font-size:1.65rem;font-weight:700;line-height:1.9rem}#vcomments h3{font-size:1.45rem;font-weight:700;line-height:1.7rem}#vcomments h4{font-size:1.25rem;font-weight:700;line-height:1.5rem}#vcomments h5{font-size:1.1rem;font-weight:700;line-height:1.4rem}#vcomments h6{font-size:1rem;line-height:1.3rem}#vcomments p{font-size:1rem;line-height:1.5rem}#vcomments hr{margin:12px 0;border:0;border-top:1px solid #ccc}#vcomments blockquote{margin:15px 0;border-left:5px solid #42b983;padding:1rem .8rem .3rem .8rem;color:#666;background-color:rgba(66,185,131,.1)}#vcomments pre{font-family:monospace,monospace;padding:1.2em;margin:.5em 0;background:#272822;overflow:auto;border-radius:.3em;tab-size:4}#vcomments code{font-family:monospace,monospace;padding:1px 3px;font-size:.92rem;color:#e96900;background-color:#f8f8f8;border-radius:2px}#vcomments pre code{font-family:monospace,monospace;padding:0;color:#e8eaf6;background-color:#272822}#vcomments pre[class*=language-]{padding:1.2em;margin:.5em 0}#vcomments code[class*=language-],pre[class*=language-]{color:#e8eaf6}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}#vcomments b,strong{font-weight:700}#vcomments dfn{font-style:italic}#vcomments small{font-size:85%}#vcomments cite{font-style:normal}#vcomments mark{background-color:#fcf8e3;padding:.2em}#vcomments table,td,th{padding:12px 13px;border:1px solid #dfe2e5}table tr:nth-child(2n),thead{background-color:#fafafa}#vcomments table th{background-color:#f2f2f2;min-width:80px}#vcomments table td{min-width:80px}#vcomments [type=checkbox]:not(:checked),[type=checkbox]:checked{position:inherit;margin-left:-1.3rem;margin-right:.4rem;margin-top:-1px;vertical-align:middle;left:unset;visibility:visible}</style><div class="card valine-card" data-aos="fade-up"><div id="vcomments" class="card-content" style="display:grid"></div></div><script src="/libs/valine/av-min.js"></script><script src="/libs/valine/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"zujquLngWF4mzRVa45lJ8zbL-gzGzoHsz",appKey:"kLxS4roAM6svcxt2ibJRIJub",tagMeta:["博主","小伙伴","访客"],master:"MD5加密后的值",enableQQ:!1,notify:!1,verify:!1,visitor:!1,avatar:"monsterid",pageSize:"10",lang:"zh-cn",placeholder:"ヾﾉ≧∀≦)o来啊！,快活啊!"})</script><article id="prenext-posts" class="prev-next articles"><div class="row article-row"><div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up"><div class="article-badge left-badge text-color"><i class="far fa-dot-circle"></i>&nbsp;本篇</div><div class="card"><a href="/posts/3708529067.html"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="/medias/featureimages/17.jpg" class="responsive-img" alt="mysql笔记整理"> <span class="card-title">mysql笔记整理</span></div></a><div class="card-content article-content"><div class="summary block-with-text"></div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i>2021-12-08 </span><span class="publish-author"><i class="fas fa-user fa-fw"></i> 念</span></div></div><div class="card-action article-tags"><a href="/tags/MySQL/"><span class="chip bg-color">MySQL</span></a></div></div></div><div class="article col s12 m6" data-aos="fade-up"><div class="article-badge right-badge text-color">下一篇&nbsp;<i class="fas fa-chevron-right"></i></div><div class="card"><a href="/posts/1591307376.html"><div class="card-image"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="/medias/featureimages/33.jpg" class="responsive-img" alt="Python-json.dumps()和dump()、json.loads()和load()的区别"> <span class="card-title">Python-json.dumps()和dump()、json.loads()和load()的区别</span></div></a><div class="card-content article-content"><div class="summary block-with-text"></div><div class="publish-info"><span class="publish-date"><i class="far fa-clock fa-fw icon-date"></i>2021-12-07 </span><span class="publish-author"><i class="fas fa-user fa-fw"></i> 念</span></div></div><div class="card-action article-tags"><a href="/tags/python/"><span class="chip bg-color">python</span></a></div></div></div></div></article></div><script>$("#articleContent").on("copy",function(e){var n,t,o,i;void 0!==window.getSelection&&((""+(n=window.getSelection())).length<Number.parseInt("120")||(t=document.getElementsByTagName("body")[0],(o=document.createElement("div")).style.position="absolute",o.style.left="-99999px",t.appendChild(o),o.appendChild(n.getRangeAt(0).cloneContents()),"PRE"!==n.getRangeAt(0).commonAncestorContainer.nodeName&&"CODE"!==n.getRangeAt(0).commonAncestorContainer.nodeName||(o.innerHTML="<pre>"+o.innerHTML+"</pre>"),i=document.location.href,o.innerHTML+='<br />来源: 思<br />文章作者: 念<br />文章链接: <a href="'+i+'">'+i+"</a><br />本文章著作权归作者所有，任何形式的转载都请注明出处。",n.selectAllChildren(o),window.setTimeout(function(){t.removeChild(o)},200)))})</script><script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script><script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script><script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script><script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script></div><div id="toc-aside" class="expanded col l3 hide-on-med-and-down"><div class="toc-widget card" style="background-color:#fff"><div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div><div id="toc-content"></div></div></div></div><div id="floating-toc-btn" class="hide-on-med-and-down"><a class="btn-floating btn-large bg-color"><i class="fas fa-list-ul"></i></a></div><script src="/libs/tocbot/tocbot.min.js"></script><script>$(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });</script></main><footer class="page-footer bg-color"><link rel="stylesheet" href="/libs/aplayer/APlayer.min.css"><style>.aplayer .aplayer-lrc p{font-size:12px;font-weight:700;line-height:16px!important}.aplayer .aplayer-lrc p.aplayer-lrc-current{font-size:15px;color:#542674}</style><div><div class="row"><meting-js class="col l8 offset-l2 m10 offset-m1 s12" server="" type="" fixed="true" autoplay theme="#542674" loop order="list" preload="auto" volume="0.7" list-folded="true"></meting-js></div></div><script src="/libs/aplayer/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script><div class="container row center-align" style="margin-bottom:0!important"><div class="col s12 m8 l8 copy-right">Copyright&nbsp;&copy; <span id="year">2021-2022</span> <span id="year">2021</span> <a href="/about" target="_blank">念</a> |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a> |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a><br><span id="busuanzi_container_site_pv" style="display:none"></span> <i class="fa fa-heart-o"></i> 本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span> <span id="busuanzi_container_site_uv" style="display:none"></span> 人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.<br><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280314444'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1280314444%26online%3D2' type='text/javascript'%3E%3C/script%3E"))</script><script type="text/javascript" src="https://s4.cnzz.com/z_stat.php?id=1280314444&web_id=1280314444"></script><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280314444'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z_stat.php%3Fid%3D1280314444%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"))</script><br><span id="sitetime"></span><br><span id="icp"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="/medias/icp.png" style="vertical-align:text-bottom"> <a href="https://beian.miit.gov.cn" target="_blank"></a></span></div><div class="col s12 m4 l4 social-link social-statis"><a href="https://github.com/alacong" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50"><i class="fab fa-github"></i> </a><a href="mailto:1137528916@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50"><i class="fas fa-envelope-open"></i> </a><a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1137528916" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1137528916" data-position="top" data-delay="50"><i class="fab fa-qq"></i> </a><a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50"><i class="fas fa-rss"></i></a></div></div></footer><div class="progress-bar"></div><script language="javascript">function siteTime(){window.setTimeout("siteTime()",1e3);var e=36e5,t=24*e,o=new Date,i=o.getFullYear(),a=o.getMonth()+1,n=o.getDate(),r=o.getHours(),l=o.getMinutes(),s=o.getSeconds(),M=Date.UTC(2021,9,11,0,0,0),g=Date.UTC(i,a,n,r,l,s)-M,m=Math.floor(g/31536e6),T=Math.floor(g/t-365*m),f=Math.floor((g-(365*m+T)*t)/e),h=Math.floor((g-(365*m+T)*t-f*e)/6e4),u=Math.floor((g-(365*m+T)*t-f*e-6e4*h)/1e3);document.getElementById("sitetime").innerHTML="本站已运行 "+m+" 年 "+T+" 天 "+f+" 小时 "+h+" 分钟 "+u+" 秒"}siteTime()</script><script>$(document).ready(function(){var e=setInterval(function(){"none"!=document.getElementById("busuanzi_container_site_pv").style.display&&($("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html())+n),clearInterval(e));"none"!=$("#busuanzi_container_site_pv").css("display")&&($("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html())+t),clearInterval(e))},50),n=8e4,t=2e4})</script><div id="searchModal" class="modal"><div class="modal-content"><div class="search-header"><span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span> <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input"></div><div id="searchResult"></div></div></div><script type="text/javascript">$(function(){!function(t,s,i){"use strict";$.ajax({url:t,dataType:"xml",success:function(t){var e=$("entry",t).map(function(){return{title:$("title",this).text(),content:$("content",this).text(),url:$("url",this).text()}}).get(),n=document.getElementById(s),r=document.getElementById(i);n.addEventListener("input",function(){var f='<ul class="search-result-list">',m=this.value.trim().toLowerCase().split(/[\s\-]+/);r.innerHTML="",this.value.trim().length<=0||(e.forEach(function(t){var n,e,r,s,i,l=!0,a=t.title.trim().toLowerCase(),c=t.content.trim().replace(/<[^>]+>/g,"").toLowerCase(),u=0===(u=t.url).indexOf("/")?t.url:"/"+u,o=-1,h=-1;""!==a&&""!==c&&m.forEach(function(t,e){n=a.indexOf(t),o=c.indexOf(t),n<0&&o<0?l=!1:(o<0&&(o=0),0===e&&(h=o))}),l&&(f+="<li><a href='"+u+"' class='search-result-title'>"+a+"</a>",e=t.content.trim().replace(/<[^>]+>/g,""),0<=h&&(s=h+80,(r=h-20)<0&&(r=0),0===r&&(s=100),s>e.length&&(s=e.length),i=e.substr(r,s),m.forEach(function(t){var e=new RegExp(t,"gi");i=i.replace(e,'<em class="search-keyword">'+t+"</em>")}),f+='<p class="search-result">'+i+"...</p>"),f+="</li>")}),f+="</ul>",r.innerHTML=f)})}})}("/search.xml","searchInput","searchResult")})</script><div id="backTop" class="top-scroll"><a class="btn-floating btn-large waves-effect waves-light" href="#!"><i class="fas fa-arrow-up"></i></a></div><script src="/libs/materialize/materialize.min.js"></script><script src="/libs/masonry/masonry.pkgd.min.js"></script><script src="/libs/aos/aos.js"></script><script src="/libs/scrollprogress/scrollProgress.min.js"></script><script src="/libs/lightGallery/js/lightgallery-all.min.js"></script><script src="/js/matery.js"></script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script async src="/libs/others/busuanzi.pure.mini.js"></script><script src="//code.tidio.co/.js"></script><script type="text/javascript">var st,OriginTitile=document.title;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>/*屏蔽网页源码*/<script type="text/javascript">window.onload = function(){ //屏蔽键盘事件 document.onkeydown = function (){ var e = window.event || arguments[0]; //F12 if(e.keyCode == 123){ return false; //Ctrl+Shift+I }else if((e.ctrlKey) && (e.shiftKey) && (e.keyCode == 73)){ return false; //Shift+F10 }else if((e.shiftKey) && (e.keyCode == 121)){ return false; //Ctrl+U }else if((e.ctrlKey) && (e.keyCode == 85)){ return false; } }; //屏蔽鼠标右键 document.oncontextmenu = function (){ return false; } }</script><script>$(document).ready(function(){setInterval(function(){var t=$("#tidio-chat iframe");"block"==t.css("display")&&977<$(window).width()?(document.getElementById("tidio-chat-iframe").style.bottom=0<("none"==$("div#backTop.top-scroll").css("display")&&977<$(window).width())?"-40px":0<($("div.toc-title").length&&977<$(window).width())?"85px":"20px",document.getElementById("tidio-chat-iframe").style.right="-15px",document.getElementById("tidio-chat-iframe").style.height=520<=parseInt(t.css("height"))?"520px":t.css("height"),document.getElementById("tidio-chat-iframe").style.zIndex="997"):"block"==t.css("display")&&601<$(window).width()&&$(window).width()<992?(document.getElementById("tidio-chat-iframe").style.bottom=0<("none"==$("div#backTop.top-scroll").css("display")&&601<$(window).width()<992)?"-40px":"20px",document.getElementById("tidio-chat-iframe").style.right="-15px",document.getElementById("tidio-chat-iframe").style.zIndex="997"):"block"==t.css("display")&&$(window).width()<601&&parseInt(t.css("height"))<230&&(document.getElementById("tidio-chat-iframe").style.bottom=0<("none"==$("div#backTop.top-scroll").css("display")&&$(window).width()<601)?"-10px":"45px",document.getElementById("tidio-chat-iframe").style.zIndex="997");"block"==t.css("display")&&$(window).width()<601&&230<=parseInt(t.css("height"))&&(document.getElementById("tidio-chat-iframe").style.zIndex="998")},50)})</script><script>!function(e,t,o,c,i,a,n){e.DaoVoiceObject=i,e[i]=e[i]||function(){(e[i].q=e[i].q||[]).push(arguments)},e[i].l=+new Date,a=t.createElement(o),n=t.getElementsByTagName(o)[0],a.async=1,a.src=c,a.charset="utf-8",n.parentNode.insertBefore(a,n)}(window,document,"script",("https:"==document.location.protocol?"https:":"http:")+"//widget.daovoice.io/widget/6984b559.js","daovoice"),daovoice("init",{app_id:""}),daovoice("update")</script><div style="position:fixed;bottom:125px;right:16px;cursor:pointer"><a title="兔小巢" target="_blank" rel="noopener" href="https://support.qq.com/products/"><i class="fa fa-comments fa-3x" aria-hidden="true"></i></a></div><script type="text/javascript" color="0,0,255" pointcolor="0,0,0" opacity="0.7" zindex="-1" count="120" src="/libs/background/canvas-nest.js"></script><script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async></script><script src="/libs/instantpage/instantpage.js" type="module"></script><canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:1;pointer-events:none"></canvas><script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script><script type="text/javascript" src="/js/fireworks.js"></script><script type="text/javascript">var windowWidth=$(window).width();768<windowWidth&&document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>')</script><script type="text/javascript">var windowWidth=$(window).width();768<windowWidth&&document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>')</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({pluginRootPath:"live2dw/",pluginJsPath:"lib/",pluginModelPath:"assets/",tagMode:!1,log:!1,model:{jsonPath:"/live2dw/assets/shizuku.model.json"},display:{position:"right",width:150,height:300},mobile:{show:!1},react:{opacity:.7}})</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body></html>
